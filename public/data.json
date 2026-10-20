@@ -1,0 +1,122 @@
+[
+  {
+    "image_url": "https://images.pexels.com/photos/6373307/pexels-photo-6373307.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "SEATING",
+    "name": "Sora Lounge Chair",
+    "description": "Sculptural comfort in warm, tactile linen.",
+    "price": "$840",
+    "rating": 4.9
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/34447080/pexels-photo-34447080.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "LIGHTING",
+    "name": "Arc Floor Lamp",
+    "description": "A quiet glow with a clean architectural line.",
+    "price": "$320",
+    "rating": 4.7
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/12327988/pexels-photo-12327988.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "SEATING",
+    "name": "Forma Sofa",
+    "description": "Generous proportions, tailored for everyday life.",
+    "price": "$2,480",
+    "rating": 4.8
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/27389956/pexels-photo-27389956.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "TABLES",
+    "name": "Rill Coffee Table",
+    "description": "Natural grain, softened edges, timeless utility.",
+    "price": "$690",
+    "rating": 4.6
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/34984437/pexels-photo-34984437.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "STORAGE",
+    "name": "Olav Sideboard",
+    "description": "Neutral wood 4-door sideboard with a clean, minimalist design.",
+    "price": "$1,029",
+    "rating": 4.7
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/17135526/pexels-photo-17135526.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "STORAGE",
+    "name": "Lina Bookshelf",
+    "description": "Open shelving with a warm wood finish, perfect for displaying books and décor.",
+    "price": "$450",
+    "rating": 4.5
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/27389956/pexels-photo-27389956.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "TABLES",
+    "name": "Leonardo Dining Table",
+    "description": "Six-seat rectangular table with an oak effect top and matte black metal legs.",
+    "price": "$664.99",
+    "rating": 4.7
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/29718946/pexels-photo-29718946.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "SEATING",
+    "name": "Cozy Dining Set",
+    "description": "Modern dining setup with elegant chairs and a round table.",
+    "price": "$1,200",
+    "rating": 4.6
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/30315596/pexels-photo-30315596.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "LIGHTING",
+    "name": "Nova Floor Lamp",
+    "description": "A dramatic floor lamp casting warm light against a wall.",
+    "price": "$280",
+    "rating": 4.4
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/6373307/pexels-photo-6373307.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "SEATING",
+    "name": "Calla Armchair",
+    "description": "A stylish velvet armchair with a blank book, perfect for a cozy reading corner.",
+    "price": "$550",
+    "rating": 4.8
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/34984437/pexels-photo-34984437.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "STORAGE",
+    "name": "Capello Sideboard",
+    "description": "White Travertine marble top with white oak veneer.",
+    "price": "$1,299",
+    "rating": 4.8
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/17135526/pexels-photo-17135526.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "STORAGE",
+    "name": "Modern Bookshelf",
+    "description": "A wooden bookshelf adorned with books, decorations, and houseplants.",
+    "price": "$380",
+    "rating": 4.3
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/27389956/pexels-photo-27389956.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "TABLES",
+    "name": "Rustic Dining Table",
+    "description": "A beautifully set long dining table in a rustic room, ideal for gatherings.",
+    "price": "$890",
+    "rating": 4.5
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/34447080/pexels-photo-34447080.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "DECOR",
+    "name": "Cozy Corner Set",
+    "description": "A serene living room scene featuring an elegant floor lamp and comfortable seating.",
+    "price": "$1,100",
+    "rating": 4.7
+  },
+  {
+    "image_url": "https://images.pexels.com/photos/12327988/pexels-photo-12327988.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "category": "SEATING",
+    "name": "Grey Sofa",
+    "description": "A modern grey sofa with a clean silhouette, perfect for contemporary spaces.",
+    "price": "$1,950",
+    "rating": 4.6
+  }
+]
