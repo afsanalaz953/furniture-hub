@@ -25,7 +25,7 @@ A furniture store web app built with Next.js 16 (App Router), Tailwind CSS v4 + 
 
    BETTER_AUTH_SECRET=<generate-a-secret>
    BETTER_AUTH_URL=http://localhost:3000
-   MONGODB_URL=<your-mongodb-connection-string>
+   
   
 
 3. **Run the dev server** (Turbopack):
@@ -36,15 +36,15 @@ A furniture store web app built with Next.js 16 (App Router), Tailwind CSS v4 + 
 
 ## Route summary
 
-|    `/` ---------------|  Public    |  Home
-| `/about`              | Public    | About page                                               |
-| `/products`           | Public    | Full product catalog with search/filter                  |
-| `/products/[id]`      | Public    | Product details (SSG) with related products              |
-| `/signin`             | Public    | Sign-in page                                              |
-| `/signup`             | Public    | Sign-up page                                              |
-| `/add-product`        | Protected | Add a new product               |
-| `/products/manage`    | Protected | Manage/remove products                   |
-| `/profile`            | Protected | User profile and session info  
+|    `/` ;----> Public ---->  Home
+| `/about`; ----> Public ----> About page                                               
+| `/products`; ---> Public ---->Full product catalog with search/filter 
+| `/products/[id]`;-> Public--->Product details (SSG) with related products
+| `/signin`;-------> Public---->Sign-in page 
+| `/signup`;-------> Public----->Sign-up page  
+| `/add-product;---->Protected -->Add a new product
+| `/products/manage`;--> Protected-->Manage/remove products
+| `/profile`; Protected--->User profile and session info  
 
 *=> Live Link
 https://furniturehub-next.vercel.app
