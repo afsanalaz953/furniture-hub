@@ -81,10 +81,10 @@ const ProductsExplorer = ({ products }) => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 bg-[#F1F5F9]">
       <div className="mb-6">
         <h1 className="text-3xl font-bold">All Products</h1>
-        <p className="text-sm opacity-60">
+        <p className="text mt-2 opacity-80">
           {filtered.length} of {allProducts.length} products
         </p>
       </div>
@@ -94,7 +94,7 @@ const ProductsExplorer = ({ products }) => {
         <input
           type="search"
           placeholder="Search products…"
-          className="input input-bordered w-full lg:max-w-xs"
+          className="input input-bordered font-bold w-full lg:max-w-xs"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -132,7 +132,7 @@ const ProductsExplorer = ({ products }) => {
             </option>
           ))}
         </select>
-        <button className="btn btn-ghost" onClick={clearFilters}>
+        <button className="btn btn-ghost bg-[#087C7E] hover:text-white"  onClick={clearFilters}>
           Clear
         </button>
       </div>
@@ -164,11 +164,11 @@ const ProductsExplorer = ({ products }) => {
                   <span className="badge badge-outline">{p.category}</span>
                   <span className="text-sm font-semibold">★ {p.rating}</span>
                 </div>
-                <h2 className="card-title text-base">{p.name}</h2>
-                <p className="text-sm opacity-70 line-clamp-2">{p.description}</p>
+                <h2 className="card-title  text-xl">{p.name}</h2>
+                <p className="text-lg opacity-90 line-clamp-2">{p.description}</p>
                 <div className="card-actions justify-between items-center mt-2">
                   <span className="font-bold text-lg text-success">{p.price}</span>
-                  <Link href={`/products/${p.id}`} className="btn btn-primary btn-sm">
+                  <Link href={`/products/${p.id}`} className="btn bg-[#087C7E] hover:text-white btn-sm">
                     View Details
                   </Link>
                 </div>

@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Serein-Furniture Hub
 
-## Getting Started
+A furniture store web app built with Next.js 16 (App Router), Tailwind CSS v4 + daisyUI, and [better-auth](https://www.better-auth.com) for authentication backed by MongoDB. Browse a catalog of furniture products, add or remove products, and manage your account — all in a modern, responsive interface.
 
-First, run the development server:
+## Key features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Product catalog** — browse seed products from data.json in the Products Explorer, with live search plus category, price-range, and minimum-rating filters.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Product details** — dedicated page per product with related-product suggestions and prerendered static pages (SSG).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Add / manage products** — logged-in users can add new products (validated form) and remove existing ones; changes persist in the browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Authentication** — email/password sign-up and sign-in powered by better-auth  in the navbar and profile page.
 
-## Learn More
+- **Route protection** — a proxy (middleware) redirects unauthenticated visitors away from `/add-product`, `/products/manage`, and `/profile`.
 
-To learn more about Next.js, take a look at the following resources:
+- **Marketing sections** — hero banner, feature strip, marquee, and testimonials on the home page.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Setup & installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repo** and install dependencies
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Configure environment variables** — create a `.env` file in the project root:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   BETTER_AUTH_SECRET=<generate-a-secret>
+   BETTER_AUTH_URL=http://localhost:3000
+   MONGODB_URL=<your-mongodb-connection-string>
+  
+
+3. **Run the dev server** (Turbopack):
+
+   npm run dev
+   Open [http://localhost:3000](http://localhost:3000).
+
+
+## Route summary
+
+|    `/` ---------------|  Public    |  Home
+| `/about`              | Public    | About page                                               |
+| `/products`           | Public    | Full product catalog with search/filter                  |
+| `/products/[id]`      | Public    | Product details (SSG) with related products              |
+| `/signin`             | Public    | Sign-in page                                              |
+| `/signup`             | Public    | Sign-up page                                              |
+| `/add-product`        | Protected | Add a new product               |
+| `/products/manage`    | Protected | Manage/remove products                   |
+| `/profile`            | Protected | User profile and session info  
+

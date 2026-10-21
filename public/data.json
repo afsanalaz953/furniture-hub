@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "image_url": "https://images.pexels.com/photos/6373307/pexels-photo-6373307.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "SEATING",
     "name": "Sora Lounge Chair",
@@ -8,6 +9,7 @@
     "rating": 4.9
   },
   {
+    "id": 2,
     "image_url": "https://images.pexels.com/photos/34447080/pexels-photo-34447080.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "LIGHTING",
     "name": "Arc Floor Lamp",
@@ -15,15 +17,9 @@
     "price": "$320",
     "rating": 4.7
   },
+ 
   {
-    "image_url": "https://images.pexels.com/photos/12327988/pexels-photo-12327988.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
-    "category": "SEATING",
-    "name": "Forma Sofa",
-    "description": "Generous proportions, tailored for everyday life.",
-    "price": "$2,480",
-    "rating": 4.8
-  },
-  {
+    "id": 4,
     "image_url": "https://images.pexels.com/photos/27389956/pexels-photo-27389956.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "TABLES",
     "name": "Rill Coffee Table",
@@ -32,6 +28,7 @@
     "rating": 4.6
   },
   {
+    "id": 5,
     "image_url": "https://images.pexels.com/photos/34984437/pexels-photo-34984437.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "STORAGE",
     "name": "Olav Sideboard",
@@ -40,6 +37,7 @@
     "rating": 4.7
   },
   {
+    "id": 6,
     "image_url": "https://images.pexels.com/photos/17135526/pexels-photo-17135526.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "STORAGE",
     "name": "Lina Bookshelf",
@@ -48,6 +46,7 @@
     "rating": 4.5
   },
   {
+    "id": 7,
     "image_url": "https://images.pexels.com/photos/27389956/pexels-photo-27389956.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "TABLES",
     "name": "Leonardo Dining Table",
@@ -56,6 +55,7 @@
     "rating": 4.7
   },
   {
+    "id": 8,
     "image_url": "https://images.pexels.com/photos/29718946/pexels-photo-29718946.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "SEATING",
     "name": "Cozy Dining Set",
@@ -64,6 +64,7 @@
     "rating": 4.6
   },
   {
+    "id": 9,
     "image_url": "https://images.pexels.com/photos/30315596/pexels-photo-30315596.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "LIGHTING",
     "name": "Nova Floor Lamp",
@@ -72,6 +73,7 @@
     "rating": 4.4
   },
   {
+    "id": 10,
     "image_url": "https://images.pexels.com/photos/6373307/pexels-photo-6373307.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "SEATING",
     "name": "Calla Armchair",
@@ -80,6 +82,7 @@
     "rating": 4.8
   },
   {
+    "id": 11,
     "image_url": "https://images.pexels.com/photos/34984437/pexels-photo-34984437.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "STORAGE",
     "name": "Capello Sideboard",
@@ -88,6 +91,7 @@
     "rating": 4.8
   },
   {
+    "id": 12,
     "image_url": "https://images.pexels.com/photos/17135526/pexels-photo-17135526.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "STORAGE",
     "name": "Modern Bookshelf",
@@ -96,6 +100,7 @@
     "rating": 4.3
   },
   {
+    "id": 13,
     "image_url": "https://images.pexels.com/photos/27389956/pexels-photo-27389956.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "TABLES",
     "name": "Rustic Dining Table",
@@ -104,6 +109,7 @@
     "rating": 4.5
   },
   {
+    "id": 14,
     "image_url": "https://images.pexels.com/photos/34447080/pexels-photo-34447080.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
     "category": "DECOR",
     "name": "Cozy Corner Set",
@@ -112,7 +118,8 @@
     "rating": 4.7
   },
   {
-    "image_url": "https://images.pexels.com/photos/12327988/pexels-photo-12327988.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "id": 15,
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJ_KQtOHRkn3iRrnlGF5Hkt2Zgv6kArQumUfxjgAnrrxP4X_NOlAw-9L-&s=10",
     "category": "SEATING",
     "name": "Grey Sofa",
     "description": "A modern grey sofa with a clean silhouette, perfect for contemporary spaces.",

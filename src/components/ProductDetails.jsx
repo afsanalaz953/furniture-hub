@@ -7,7 +7,7 @@ import Link from "next/link";
 // Presentational details layout — usable from both server and client components.
 const ProductDetails = ({ product, related = [] }) => {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 bg-[#F1F5F9]">
       <div className="mb-6">
         <Link href="/products" className="btn btn-ghost btn-sm">
           ← Back to Products
@@ -38,7 +38,7 @@ const ProductDetails = ({ product, related = [] }) => {
           <p className="leading-relaxed opacity-80">{product.description}</p>
 
           <div className="flex gap-3 mt-4">
-            <button className="btn btn-primary">Add to Cart</button>
+            <button className="btn bg-[#087C7E] hover:text-white  ">Add to Cart</button>
             <Link href="/products" className="btn btn-outline">
               Continue Shopping
             </Link>
@@ -47,7 +47,7 @@ const ProductDetails = ({ product, related = [] }) => {
           {/* Additional info */}
           <div className="mt-6">
             <h2 className="text-lg font-semibold mb-2">Additional information</h2>
-            <ul className="menu menu-horizontal bg-base-200 rounded-box flex-wrap gap-2 p-2 text-sm">
+            <ul className="menu menu-horizontal bg-cyan-600  rounded-box flex-wrap gap-2 p-2 text-sm">
               <li>
                 <span className="font-semibold">Category:</span> {product.category}
               </li>
@@ -127,7 +127,7 @@ const ProductDetails = ({ product, related = [] }) => {
                   <h3 className="card-title text-base">{p.name}</h3>
                   <div className="card-actions justify-between items-center mt-2">
                     <span className="font-bold text-success">{p.price}</span>
-                    <Link href={`/products/${p.id}`} className="btn btn-primary btn-sm">
+                    <Link href={`/products/${p.id}`} className="btn bg-[#087C7E] hover:text-white  btn-sm">
                       View Details
                     </Link>
                   </div>

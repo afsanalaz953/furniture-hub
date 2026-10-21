@@ -6,9 +6,9 @@ import {authClient} from "@/lib/auth-client";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 // import { FaGithub } from "react-icons/fa";
 
-// import { FcGoogle } from 'react-icons/fc';
+import { FcGoogle } from 'react-icons/fc';
 // import { redirect } from 'next/navigation';
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 
 
@@ -38,7 +38,7 @@ console.log(data, "logindata");
 console.log (error, 'error');
 
 if (error) {
-  setFeedback({ type: "error", text: error?.message || "সাইন ইন ব্যর্থ হয়েছে" });
+  setFeedback({ type: "error", text: error?.message || "Sign-in Failed" });
 }
 
  if (data) {
@@ -49,24 +49,19 @@ setLoading(false);
 
 }
 
-//  const handleGoogleSignin = async () => {
-// const data = await authClient.signIn.social({
-//     provider: "google",
-//   });
-// console.log(data, "GOOGLEdata");
-// }
+ const handleGoogleSignin = async () => {
+const data = await authClient.signIn.social({
+    provider: "google",
+  });
+console.log(data, "GOOGLEdata");
+}
 
-//  const handleGithubSignin = async () => {
-// const data = await authClient.signIn.social({
-//     provider: "github",
-//   });
-// console.log(data, "Githubdata");
-// }
+
 
 
 
     return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-teal-100">
+    <div className="relative overflow-hidden bg-linear-to-br from-emerald-50 via-white to-teal-100">
       {/* decorative blurred blobs */}
       <div className="pointer-events-none absolute -top-32 -left-32 h-80 w-80 rounded-full bg-emerald-300/40 blur-3xl" aria-hidden="true" />
       <div className="pointer-events-none absolute -bottom-40 -right-24 h-96 w-96 rounded-full bg-teal-300/30 blur-3xl" aria-hidden="true" />
@@ -76,11 +71,12 @@ setLoading(false);
 
           {/* avatar + heading */}
           <div className="flex flex-col items-center text-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 text-3xl text-white shadow-lg shadow-emerald-300/60">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full 
+            bg-linear-to-br from-emerald-400 to-teal-500 text-3xl text-white shadow-lg shadow-emerald-300/60">
               <FaLock />
             </div>
             <h1 className="mt-4 text-3xl font-bold text-gray-800"> Sign in </h1>
-            <p className="mt-1 text-sm text-gray-500"> বাজার দরে স্বাগতম — আপনার অ্যাকাউন্টে প্রবেশ করুন </p>
+            <p className="mt-1 text-lg text-gray-500"> Welcome to Serein.  Enter your Account </p>
           </div>
 
           <form onSubmit={onSubmit} className="mt-8 space-y-4">
@@ -113,7 +109,7 @@ setLoading(false);
                   type="password"
                   name="password"
                   required
-                  placeholder="কমপক্ষে ৮ অক্ষর"
+                  placeholder="8 letters"
                   className="input w-full ps-10 focus:ring-2 focus:ring-emerald-400"
                 />
               </div>
@@ -128,7 +124,7 @@ setLoading(false);
             <button
               type="submit"
               disabled={loading}
-              className="btn w-full bg-gradient-to-r from-emerald-500 to-teal-500 font-bold text-white border-0 hover:from-emerald-600 hover:to-teal-600"
+              className="btn w-full bg-linear-to-r from-emerald-500 to-teal-500 font-bold text-white border-0 hover:from-emerald-600 hover:to-teal-600"
             >
               {loading ? (
                 <>
@@ -143,25 +139,25 @@ setLoading(false);
             <div className="divider text-sm text-gray-400"> or </div>
 
             {/* সোশ্যাল লগইন — better-auth এ socialProviders সেটআপ হলে আবার চালু করুন */}
-            {/* <div className='social flex flex-col gap-3'>
+            <div className='social flex flex-col gap-3'>
               <button
                 type="button"
                 onClick={handleGoogleSignin}
-                className="btn border-base-300 bg-white text-gray-700 shadow-md hover:bg-gray-50"
+                className="btn border-base-300 text-lg font-bold bg-white text-gray-700 shadow-md hover:bg-gray-50"
               >
                 <FcGoogle size={22} />
-                Google দিয়ে চালিয়ে যান
+                Google 
               </button>
 
-              <button
+              {/* <button
                 type="button"
                 onClick={handleGithubSignin}
                 className="btn border-base-300 bg-white text-gray-700 shadow-md hover:bg-gray-50"
               >
                 <FaGithub size={22} />
                 GitHub দিয়ে চালিয়ে যান
-              </button>
-            </div> */}
+              </button> */}
+            </div> 
           </form>
 
           <div className='mt-6 flex items-center justify-center gap-1'>

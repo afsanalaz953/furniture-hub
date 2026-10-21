@@ -1,83 +1,195 @@
-"use client"
-import React from 'react';
-// import logo from "@/assets/logo.png"
-import Image from "next/image"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from 'next/navigation';
-import { authClient } from "@/lib/auth-client"
-import DropDownHover from '@/components/DropDownHover'
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
+import DropDownHover from "@/components/DropDownHover";
 
 const Navbar = () => {
-const { data: session, isPending } = authClient.useSession();
-console.log (session, "session")
+  const { data: session, isPending } = authClient.useSession();
+  const user = session?.user;
+  const router = useRouter();
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
-const user = session?.user;
-console.log (user, "session");
+  const isActive = (href) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/profile", label: "My Profile" },
+    { href: "/products", label: "Products" },
+  ];
 
-    const pathname = usePathname ();
-    console.log (pathname, "pathname");
+  // Helper to close the menu
+  const closeMenu = () => setOpen(false);
 
-    const isActive = (href) =>{
-       return href === pathname;
-    };
-    
-    return (
-        <div className='flex flex-col-3 justify-between container mx-auto my-5 shadow-md p-4'>
-            <div className='flex gap-3'>
-            {/* <Image src={logo} */}
-            <Image src='/logo'
-      alt="Picture of the author"
-      width={50}
-      height={50} />
-            <p className='font-bold text-lg'>Qurbani Hat</p> 
+  return (
+    <header className="sticky top-0 z-50 w-full border-b border-base-300 bg-base-100/80 backdrop-blur-md shadow-sm">
+      <div className="navbar container mx-auto px-4">
+        {/* ================= LEFT ================= */}
+        <div className="navbar-start gap-2">
+          {/* ---- Mobile hamburger ---- */}
+          <div className={`dropdown md:hidden ${open ? "dropdown-open" : ""}`}>
+            <button
+              className="btn btn-ghost btn-square"
+              aria-label="Toggle menu"
+              aria-expanded={open}
+              onClick={() => setOpen((o) => !o)}
+            >
+              {open ? (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+
+            {/* ---- Mobile dropdown menu ---- */}
+            <ul className="menu dropdown-content mt-3 w-64 rounded-box bg-base-100 p-2 shadow-lg border border-base-300">
+              {links.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    onClick={closeMenu} // ✅ Close menu on link click
+                    className={
+                      isActive(href)
+                        ? "active text-[#087C7E] font-semibold"
+                        : ""
+                    }
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+
+              <div className="divider my-1" />
+
+              {/* ---- Mobile auth section ---- */}
+              {isPending ? (
+                <li className="flex justify-center p-2">
+                  <span className="loading loading-spinner text-success" />
+                </li>
+              ) : user ? (
+                <>
+                  <li className="px-3 py-1 text-sm opacity-70 truncate">
+                    Hi, {user.name}
+                  </li>
+                  <li>
+                    <button
+                      onClick={async () => {
+                        await authClient.signOut();
+                        closeMenu(); // ✅ Already handled
+                         router.push("/");
+                         router.refresh(); 
+                      }}
+                       className="text-[#087C7E] font-medium"
+                    >
+                      Sign Out
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link href="/signin" onClick={closeMenu} className="text-[#087C7E] font-medium">
+                      Sign in
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/signup" onClick={closeMenu} className="text-[#087C7E] font-medium">
+                      Sign Up
+                    </Link>
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
+
+          {/* ---- Logo ---- */}
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/assets/furniture-logo.jpg"
+              alt="Serein Furniture Hub logo"
+              width={50}
+              height={50}
+              className="rounded-full object-cover"
+            />
+            <div>
+              <p className="font-bold text-2xl leading-none">serein.</p>
+              <p className="text-[#087C7E] text-sm">Furniture Hub</p>
             </div>
-            
-                <ul className='flex gap-3'>
-                    <li><Link href={"/"} className={`${isActive ("/") ? " border-b-4 border-b-green-600": "" }`}  >Home</Link></li>
-                    <li><Link href={"/allanimals"} className={`${isActive ("/allanimals") ? " border-b-4 border-b-green-600" : ""}`} >All Animals</Link></li>
-                    <li><Link href={"/profile"} className={`${isActive ("/profile") ? " border-b-4 border-b-green-600" : ""}`} >My Profile</Link></li>
-                    <li><Link href={"/products"} className={`${isActive ("/products") ? " border-b-4 border-b-green-600" : ""}`} >Products</Link></li>
-                    <li><Link href={"/add-product"} className={`${isActive ("/add-product") ? " border-b-4 border-b-green-600" : ""}`} >Add Product</Link></li>
-                    <li><Link href={"/products/manage"} className={`${isActive ("/products/manage") ? " border-b-4 border-b-green-600" : ""}`} >Manage</Link></li>
-                    
-                </ul>
- <div className='flex gap-2  items-center'>
-   {isPending ? <span className="loading loading-spinner text-success"></span> :
-    user ? ( <div className='flex gap-2 items-center'>
-           
-    <div className='rounded-full flex gap-2'> 
-        <Image src={user.image  }
-        // referrerPolicy='no-referrer'
-      alt=" author"
-      width={50}
-      height={50} 
-      />  
-      {/* <h2>Hi,{user.name}</h2>  */}
-                  </div>
-                  <div>
-                     < DropDownHover />  
-                  </div>
-        
-                    <button className='btn btn-success' 
-                    onClick={async () => await authClient.signOut()} >
-                       Sign Out</button>
-   </div>)
-   
-                  :( <div className='flex gap-3'>
-                    <button className='btn btn-success'>
-                        <Link href = {"/signin"}>Sign in</Link></button>
-         
+          </Link>
+        </div>
 
-                    <button className='btn btn-success'>
-                        <Link href ={"/signup"}>Sign Up</Link>
-                        </button>
-                    
-                    </div>)}
+        {/* ============ CENTER (desktop links) ============ */}
+        <div className="navbar-center hidden md:flex">
+          <ul className="flex gap-6">
+            {links.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={`pb-1 transition-colors hover:text-[#087C7E] ${
+                    isActive(href) ? "border-b-4 border-b-cyan-600" : ""
+                  }`}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        {/* ============ RIGHT (desktop auth) ============ */}
+        <div className="navbar-end hidden md:flex gap-2">
+          {isPending ? (
+            <span className="loading loading-spinner text-success" />
+          ) : user ? (
+            <div className="flex items-center gap-2">
+              <DropDownHover />
+              <button
+                className="btn bg-[#087C7E] text-white hover:bg-[#066567]"
+                onClick={async () =>{ await authClient.signOut();
+                   router.push("/");
+                   router.refresh(); 
+                }}
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <div className="flex gap-2">
+              <Link
+                href="/signin"
+                className="btn bg-[#087C7E] text-white hover:bg-[#066567]"
+              >
+                Sign in
+              </Link>
+              <Link
+                href="/signup"
+                className="btn bg-[#087C7E] text-white hover:bg-[#066567]"
+              >
+                Sign Up
+              </Link>
+            </div>
+          )}
         </div>
-    );
+      </div>
+    </header>
+  );
 };
 
 export default Navbar;
+
+
+
+
+
+
+

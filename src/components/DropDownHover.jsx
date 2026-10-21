@@ -33,7 +33,7 @@ const DropDownHover = () => {
      <div className="w-10 rounded-full">
     <Image
     alt="Tailwind-CSS-Avatar-component" 
-    src= {user?.image}
+    src= {user?.image }
      width={10}
       height={10} 
     />
@@ -44,15 +44,18 @@ const DropDownHover = () => {
 
     </div>
   <ul tabIndex={-1} className="dropdown-content menu bg-base-100 rounded-box z-2 w-25 shadow-sm">
-    <li className='text-blue-800 font-bold'><Link href={"/add-product"} className={`${isActive ("/add-product") ? " border-b-4 border-b-green-600" : ""}`} >Add Product</Link></li>
-    <li className='text-blue-800 font-bold'><Link href={"/profile"} className={`${isActive ("/profile") ? " border-b-4 border-b-green-600" : ""}`} >Profile</Link></li>
+    <li className='text-cyan-800 font-bold'> {user?.name}  </li>
+    <li className='text-cyan-800 font-bold'><Link href={"/add-product"} className={`${isActive ("/add-product") ? " border-b-4 border-b-cyan-600" : ""}`} >Add Product</Link></li>
+    <li className='text-cyan-800 font-bold'><Link href={"/products/manage"} className={`${isActive ("/products/manage") ? " border-b-4 border-b-cyan-600" : ""}`} >Manage Product</Link></li>
+    {/* <li className='text-cyan-800 font-bold'><Link href={"/profile"} className={`${isActive ("/profile") ? " border-b-4 border-b-cyan-600" : ""}`} >Profile</Link></li> */}
+    
     <li> 
-                    <button className='btn bg-green-800 text-sm' 
+                    <button className='btn bg-[#087C7E] hover:text-white text-sm' 
                     onClick={async () => {
                       await authClient.signOut();
                       router.push("/");
                     }} >
-                       Log Out</button>
+                       Sign Out</button>
                        </li>
   </ul>
 </div>

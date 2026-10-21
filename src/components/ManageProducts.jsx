@@ -84,7 +84,7 @@ const ManageProducts = ({ products }) => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 bg-[#F1F5F9]">
       {/* Toast */}
       <div className="toast toast-end toast-top z-50">
         {toast && (
@@ -97,11 +97,11 @@ const ManageProducts = ({ products }) => {
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
         <div>
           <h1 className="text-3xl font-bold">Manage Products</h1>
-          <p className="text-sm opacity-60">
+          <p className="text mt-2 opacity-80">
             {allProducts.length} products · {visibleProducts.length} shown
           </p>
         </div>
-        <Link href="/add-product" className="btn btn-primary">
+        <Link href="/add-product" className="btn bg-[#087C7E] hover:text-white">
           + Add Product
         </Link>
       </div>
@@ -111,7 +111,7 @@ const ManageProducts = ({ products }) => {
         <input
           type="search"
           placeholder="Search name, category or description…"
-          className="input input-bordered w-full max-w-xs"
+          className="input input-bordered w-full max-w-xs border-base-600  "
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -130,9 +130,9 @@ const ManageProducts = ({ products }) => {
       </div>
 
       {/* Products table */}
-      <div className="overflow-x-auto rounded-box border border-base-300 bg-base-100">
-        <table className="table table-zebra">
-          <thead>
+      <div className="overflow-x-auto rounded-box border border-base-300 bg-base-100 m-4">
+        <table className="table table-zebra text-lg">
+          <thead className="text-xl font-bold">
             <tr>
               <th>Image</th>
               <th>Name</th>
@@ -179,12 +179,12 @@ const ManageProducts = ({ products }) => {
                   <div className="flex gap-1">
                     <Link
                       href={`/products/${p.id}`}
-                      className="btn btn-ghost btn-xs"
+                      className="btn btn-ghost btn-xs text-lg"
                     >
                       View
                     </Link>
                     <button
-                      className="btn btn-ghost btn-xs text-error"
+                      className="btn btn-ghost btn-xs text-error text-lg"
                       onClick={() => handleDelete(p)}
                     >
                       Delete

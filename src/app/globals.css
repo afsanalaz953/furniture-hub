@@ -1,5 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-
-
+/* Testimonial marquee (react-fast-marquee): hold it still for people who
+   prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .rfm-marquee {
+    animation: none !important;
+  }
+}

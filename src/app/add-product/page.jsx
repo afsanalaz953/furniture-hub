@@ -97,10 +97,10 @@ const AddProductPage = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-3xl">
+    <div className="container mx-auto px-4 py-8 max-w-3xl bg-[#F1F5F9]">
       <div className="mb-6">
         <h1 className="text-3xl font-bold">Add Product</h1>
-        <p className="text-sm opacity-60">
+        <p className="text mt-4 opacity-80">
           Fill in the details below. Your product will show up on the{" "}
           <Link href="/products/manage" className="link link-primary">
             Manage Products
@@ -123,7 +123,7 @@ const AddProductPage = () => {
           <div className="flex flex-col gap-4">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Product name *</span>
+                <span className="label-text text-lg font-bold">Product name *</span>
               </label>
               <input
                 name="name"
@@ -137,7 +137,7 @@ const AddProductPage = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Category *</span>
+                <span className="label-text text-lg font-bold">Category *</span>
               </label>
               <input
                 name="category"
@@ -159,7 +159,7 @@ const AddProductPage = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Price ($) *</span>
+                <span className="label-text text-lg font-bold">Price ($) *</span>
               </label>
               <input
                 name="price"
@@ -176,7 +176,7 @@ const AddProductPage = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Rating: {form.rating} / 5</span>
+                <span className="label-text text-lg font-bold ">Rating: {form.rating} / 5</span>
               </label>
               <input
                 name="rating"
@@ -194,7 +194,7 @@ const AddProductPage = () => {
           <div className="flex flex-col gap-4">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Image URL *</span>
+                <span className="label-text text-lg font-bold ">Image URL *</span>
               </label>
               <input
                 name="image_url"
@@ -219,13 +219,13 @@ const AddProductPage = () => {
                   }}
                 />
               ) : (
-                <span className="text-sm opacity-50">Image preview</span>
+                <span className="text opacity-80">Image preview</span>
               )}
             </div>
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Description *</span>
+                <span className="label-text text-lg font-bold">Description *</span>
               </label>
               <textarea
                 name="description"
@@ -241,7 +241,7 @@ const AddProductPage = () => {
           </div>
 
           <div className="col-span-full flex flex-wrap gap-3 mt-2">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn bg-[#087C7E] hover:text-white">
               Save product
             </button>
             <button type="button" className="btn" onClick={reset}>

@@ -1,31 +1,44 @@
 import React from 'react';
 import Link from "next/link"
 import Image from "next/image"
+import { TiStar } from 'react-icons/ti';
 
 
-const Cards = ({animals}) => {
+const Cards = ({products}) => {
     return (
-        <div className='grid md:grid-cols-2    lg:grid-cols-4 gap-2 bg-slate-100 '>
+        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8 bg-slate-100 '>
 <div className="card bg-white shadow-sm w-max">
   <figure className="px-10 pt-10 ">
     <Image
-      src={animals.image_url}
-      alt="animals"
+      src={products.image_url}
+      alt="products"
       width={200}
       height={50}
       
-      className="rounded-xl" />
+      className="rounded-xl object-cover" />
   </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title">{animals.name}</h2>
-    <p>Breed: {animals.breed}</p>
-    <p>Age: {animals.age}</p>
-    <p>Weight:{animals.weight}</p>
-    <p className='text-2xl font-bold text-green-500'>Price: {animals.price}</p>
+  <div className="card-body items-center space-y-6 text-start ">
+    <div className='flex justify-around gap-25 '>
+        <p className=' border rounded px-2'>{products.category}</p>
+    <p className='font-bold flex '> <span><TiStar /> </span>  
+   <span> {products.rating}   </span>
+    </p>
+    </div>
+    <div className=' flex flex-col '> 
+      <h2 className="card-title text-start text-lg">{products.name}</h2>
+  
+    <p className='text-sm line-clamp-2 wrap-break-word w-50 '>{products.description}</p>
+    </div>
+    <div className='flex justify-between gap-8'>
+      <p className='text-sm font-bold text-green-500'> {products.price}</p>
    
     <div className="card-actions">
-      <button className="btn btn-neutral font-bold w-full"> <Link href ={`/animals/${animals.id}`} >View Details</Link></button>
+      <Link href ={`/products/${products.id}`} className="btn font-bold btn-sm bg-[#087C7E]"   >View Details</Link>
     </div>
+
+    </div>
+    
+    
   </div>
 </div>
     
