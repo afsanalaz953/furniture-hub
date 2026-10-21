@@ -46,3 +46,5 @@ A furniture store web app built with Next.js 16 (App Router), Tailwind CSS v4 + 
 | `/products/manage`    | Protected | Manage/remove products                   |
 | `/profile`            | Protected | User profile and session info  
 
+*=> Live Link
+https://furniturehub-next.vercel.app
